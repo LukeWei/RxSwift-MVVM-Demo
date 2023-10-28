@@ -13,17 +13,21 @@ struct ApiConstant {
     static let baseUrlString = "https://www.reddit.com"
 }
 
+enum RmdApiError: Error {
+    case JsonConvert
+}
+
 protocol RmdApiManagerProtocol {
-    func dispatch(path: String, parameters: [String: Any]?) -> Observable<Data>
+    func dispatch(path: String, parameters: [String: Any]?) -> Observable<[String: Any]>
 }
 
 final class RmdApiManager: RmdApiManagerProtocol {
     
-    func dispatch(path: String, parameters: [String : Any]? = nil) -> Observable<Data> {
+    func dispatch(path: String, parameters: [String : Any]? = nil) -> Observable<[String: Any]> {
         
         let url = URL(string: ApiConstant.baseUrlString)!.appendingPathComponent(path)
         
-        return Observable<Data>.create { observer in
+        return Observable<[String: Any]>.create { observer in
             AF.request(url, method: .get, parameters: parameters)
                 .validate()
                 .responseData { response in
@@ -32,11 +36,19 @@ final class RmdApiManager: RmdApiManagerProtocol {
                     switch response.result {
                     case let .success(value):
                         do {
-                            try JSONSerialization.jsonObject(with: value)
-                            observer.on(.next(value))
+                            
+                            guard let json = try JSONSerialization.jsonObject(with: value) as? [String: Any] else {
+                                
+                                print("error: unable convert to json")
+                                observer.onError(RmdApiError.JsonConvert)
+                                throw RmdApiError.JsonConvert
+                            }
+                            
+                            print("success response: \(json)")
+                            observer.on(.next(json))
                             observer.on(.completed)
                         } catch let parseError {
-                            observer.on(.error(parseError))
+                            observer.onError(parseError)
                         }
 
                     case let .failure(error):

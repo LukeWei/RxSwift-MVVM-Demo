@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class RmdSubredditApiManager {
     private let apimanager: RmdApiManagerProtocol
@@ -13,5 +14,11 @@ class RmdSubredditApiManager {
     init(apimanager: RmdApiManagerProtocol = RmdApiManager()) {
         self.apimanager = apimanager
     }
-        
+    
+    func fetch() -> Observable<Subreddit> {
+        return apimanager.dispatch(path: "/subreddits/default.json", parameters: nil)
+            .map({ Subreddit(JSON: $0) ?? Subreddit() })
+            .asObservable()
+            .retry(2)
+    }        
 }
