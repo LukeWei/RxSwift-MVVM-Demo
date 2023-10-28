@@ -16,6 +16,13 @@
 		A34D494A2AECD4CB004B5C4A /* Rx_MVVM_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49492AECD4CB004B5C4A /* Rx_MVVM_DemoTests.swift */; };
 		A34D49542AECD4CB004B5C4A /* Rx_MVVM_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49532AECD4CB004B5C4A /* Rx_MVVM_DemoUITests.swift */; };
 		A34D49562AECD4CB004B5C4A /* Rx_MVVM_DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49552AECD4CB004B5C4A /* Rx_MVVM_DemoUITestsLaunchTests.swift */; };
+		A34D49642AECD780004B5C4A /* RmdApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49632AECD780004B5C4A /* RmdApiManager.swift */; };
+		A34D49672AECD9E3004B5C4A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49662AECD9E3004B5C4A /* Alamofire */; };
+		A34D496A2AECDA93004B5C4A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49692AECDA93004B5C4A /* RxCocoa */; };
+		A34D496C2AECDA93004B5C4A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A34D496B2AECDA93004B5C4A /* RxSwift */; };
+		A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D496F2AECE1C3004B5C4A /* Subreddit.swift */; };
+		A34D49732AECE243004B5C4A /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49722AECE243004B5C4A /* ObjectMapper */; };
+		A34D49752AECE5D0004B5C4A /* RmdSubredditApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,9 @@
 		A34D494F2AECD4CB004B5C4A /* Rx-MVVM-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rx-MVVM-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34D49532AECD4CB004B5C4A /* Rx_MVVM_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rx_MVVM_DemoUITests.swift; sourceTree = "<group>"; };
 		A34D49552AECD4CB004B5C4A /* Rx_MVVM_DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rx_MVVM_DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A34D49632AECD780004B5C4A /* RmdApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdApiManager.swift; sourceTree = "<group>"; };
+		A34D496F2AECE1C3004B5C4A /* Subreddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
+		A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdSubredditApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34D49732AECE243004B5C4A /* ObjectMapper in Frameworks */,
+				A34D496C2AECDA93004B5C4A /* RxSwift in Frameworks */,
+				A34D496A2AECDA93004B5C4A /* RxCocoa in Frameworks */,
+				A34D49672AECD9E3004B5C4A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,9 @@
 		A34D49312AECD4CA004B5C4A /* Rx-MVVM-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A34D496E2AECE196004B5C4A /* DataModel */,
+				A34D496D2AECDC3C004B5C4A /* Extension */,
+				A34D49622AECD728004B5C4A /* API */,
 				A34D49322AECD4CA004B5C4A /* AppDelegate.swift */,
 				A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */,
 				A34D49362AECD4CA004B5C4A /* ViewController.swift */,
@@ -127,6 +144,30 @@
 			path = "Rx-MVVM-DemoUITests";
 			sourceTree = "<group>";
 		};
+		A34D49622AECD728004B5C4A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A34D49632AECD780004B5C4A /* RmdApiManager.swift */,
+				A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A34D496D2AECDC3C004B5C4A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A34D496E2AECE196004B5C4A /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A34D496F2AECE1C3004B5C4A /* Subreddit.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +184,12 @@
 			dependencies = (
 			);
 			name = "Rx-MVVM-Demo";
+			packageProductDependencies = (
+				A34D49662AECD9E3004B5C4A /* Alamofire */,
+				A34D49692AECDA93004B5C4A /* RxCocoa */,
+				A34D496B2AECDA93004B5C4A /* RxSwift */,
+				A34D49722AECE243004B5C4A /* ObjectMapper */,
+			);
 			productName = "Rx-MVVM-Demo";
 			productReference = A34D492F2AECD4CA004B5C4A /* Rx-MVVM-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +262,11 @@
 				Base,
 			);
 			mainGroup = A34D49262AECD4CA004B5C4A;
+			packageReferences = (
+				A34D49652AECD9E3004B5C4A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A34D49682AECDA93004B5C4A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A34D49712AECE243004B5C4A /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+			);
 			productRefGroup = A34D49302AECD4CA004B5C4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */,
 				A34D49372AECD4CA004B5C4A /* ViewController.swift in Sources */,
 				A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */,
+				A34D49642AECD780004B5C4A /* RmdApiManager.swift in Sources */,
 				A34D49352AECD4CA004B5C4A /* SceneDelegate.swift in Sources */,
+				A34D49752AECE5D0004B5C4A /* RmdSubredditApiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +659,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A34D49652AECD9E3004B5C4A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.8.1;
+			};
+		};
+		A34D49682AECDA93004B5C4A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.6.0;
+			};
+		};
+		A34D49712AECE243004B5C4A /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A34D49662AECD9E3004B5C4A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A34D49652AECD9E3004B5C4A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A34D49692AECDA93004B5C4A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A34D49682AECDA93004B5C4A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A34D496B2AECDA93004B5C4A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A34D49682AECDA93004B5C4A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A34D49722AECE243004B5C4A /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A34D49712AECE243004B5C4A /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A34D49272AECD4CA004B5C4A /* Project object */;
 }
