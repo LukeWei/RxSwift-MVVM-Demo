@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49322AECD4CA004B5C4A /* AppDelegate.swift */; };
 		A34D49352AECD4CA004B5C4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */; };
-		A34D49372AECD4CA004B5C4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49362AECD4CA004B5C4A /* ViewController.swift */; };
-		A34D493A2AECD4CA004B5C4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34D49382AECD4CA004B5C4A /* Main.storyboard */; };
 		A34D493C2AECD4CB004B5C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A34D493B2AECD4CB004B5C4A /* Assets.xcassets */; };
 		A34D493F2AECD4CB004B5C4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34D493D2AECD4CB004B5C4A /* LaunchScreen.storyboard */; };
 		A34D494A2AECD4CB004B5C4A /* Rx_MVVM_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49492AECD4CB004B5C4A /* Rx_MVVM_DemoTests.swift */; };
@@ -23,6 +21,12 @@
 		A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D496F2AECE1C3004B5C4A /* Subreddit.swift */; };
 		A34D49732AECE243004B5C4A /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49722AECE243004B5C4A /* ObjectMapper */; };
 		A34D49752AECE5D0004B5C4A /* RmdSubredditApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */; };
+		A34D497C2AECFFB8004B5C4A /* RmdSubredditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D497A2AECFFB8004B5C4A /* RmdSubredditViewController.swift */; };
+		A34D497D2AECFFB8004B5C4A /* RmdSubredditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34D497B2AECFFB8004B5C4A /* RmdSubredditViewController.xib */; };
+		A34D49832AEE878C004B5C4A /* RmdSubredditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49822AEE878C004B5C4A /* RmdSubredditViewModel.swift */; };
+		A34D498A2AEEAA79004B5C4A /* RmdSubredditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49882AEEAA79004B5C4A /* RmdSubredditCell.swift */; };
+		A34D498B2AEEAA79004B5C4A /* RmdSubredditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34D49892AEEAA79004B5C4A /* RmdSubredditCell.xib */; };
+		A34D498D2AEEAAEE004B5C4A /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +50,6 @@
 		A34D492F2AECD4CA004B5C4A /* Rx-MVVM-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rx-MVVM-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34D49322AECD4CA004B5C4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A34D49362AECD4CA004B5C4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A34D49392AECD4CA004B5C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A34D493B2AECD4CB004B5C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A34D493E2AECD4CB004B5C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A34D49402AECD4CB004B5C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +61,12 @@
 		A34D49632AECD780004B5C4A /* RmdApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdApiManager.swift; sourceTree = "<group>"; };
 		A34D496F2AECE1C3004B5C4A /* Subreddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
 		A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdSubredditApiManager.swift; sourceTree = "<group>"; };
+		A34D497A2AECFFB8004B5C4A /* RmdSubredditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdSubredditViewController.swift; sourceTree = "<group>"; };
+		A34D497B2AECFFB8004B5C4A /* RmdSubredditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RmdSubredditViewController.xib; sourceTree = "<group>"; };
+		A34D49822AEE878C004B5C4A /* RmdSubredditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdSubredditViewModel.swift; sourceTree = "<group>"; };
+		A34D49882AEEAA79004B5C4A /* RmdSubredditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdSubredditCell.swift; sourceTree = "<group>"; };
+		A34D49892AEEAA79004B5C4A /* RmdSubredditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RmdSubredditCell.xib; sourceTree = "<group>"; };
+		A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,16 +121,15 @@
 		A34D49312AECD4CA004B5C4A /* Rx-MVVM-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A34D49622AECD728004B5C4A /* API */,
 				A34D496E2AECE196004B5C4A /* DataModel */,
 				A34D496D2AECDC3C004B5C4A /* Extension */,
-				A34D49622AECD728004B5C4A /* API */,
+				A34D49782AECFF6C004B5C4A /* Subreddit */,
 				A34D49322AECD4CA004B5C4A /* AppDelegate.swift */,
 				A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */,
-				A34D49362AECD4CA004B5C4A /* ViewController.swift */,
-				A34D49382AECD4CA004B5C4A /* Main.storyboard */,
-				A34D493B2AECD4CB004B5C4A /* Assets.xcassets */,
 				A34D493D2AECD4CB004B5C4A /* LaunchScreen.storyboard */,
 				A34D49402AECD4CB004B5C4A /* Info.plist */,
+				A34D493B2AECD4CB004B5C4A /* Assets.xcassets */,
 			);
 			path = "Rx-MVVM-Demo";
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 		A34D496D2AECDC3C004B5C4A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -166,6 +174,18 @@
 				A34D496F2AECE1C3004B5C4A /* Subreddit.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A34D49782AECFF6C004B5C4A /* Subreddit */ = {
+			isa = PBXGroup;
+			children = (
+				A34D497A2AECFFB8004B5C4A /* RmdSubredditViewController.swift */,
+				A34D497B2AECFFB8004B5C4A /* RmdSubredditViewController.xib */,
+				A34D49822AEE878C004B5C4A /* RmdSubredditViewModel.swift */,
+				A34D49882AEEAA79004B5C4A /* RmdSubredditCell.swift */,
+				A34D49892AEEAA79004B5C4A /* RmdSubredditCell.xib */,
+			);
+			path = Subreddit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +305,8 @@
 			files = (
 				A34D493F2AECD4CB004B5C4A /* LaunchScreen.storyboard in Resources */,
 				A34D493C2AECD4CB004B5C4A /* Assets.xcassets in Resources */,
-				A34D493A2AECD4CA004B5C4A /* Main.storyboard in Resources */,
+				A34D498B2AEEAA79004B5C4A /* RmdSubredditCell.xib in Resources */,
+				A34D497D2AECFFB8004B5C4A /* RmdSubredditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */,
-				A34D49372AECD4CA004B5C4A /* ViewController.swift in Sources */,
 				A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */,
+				A34D498D2AEEAAEE004B5C4A /* UITableView+Extension.swift in Sources */,
+				A34D498A2AEEAA79004B5C4A /* RmdSubredditCell.swift in Sources */,
+				A34D49832AEE878C004B5C4A /* RmdSubredditViewModel.swift in Sources */,
 				A34D49642AECD780004B5C4A /* RmdApiManager.swift in Sources */,
+				A34D497C2AECFFB8004B5C4A /* RmdSubredditViewController.swift in Sources */,
 				A34D49352AECD4CA004B5C4A /* SceneDelegate.swift in Sources */,
 				A34D49752AECE5D0004B5C4A /* RmdSubredditApiManager.swift in Sources */,
 			);
@@ -352,14 +376,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A34D49382AECD4CA004B5C4A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A34D49392AECD4CA004B5C4A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A34D493D2AECD4CB004B5C4A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -497,7 +513,6 @@
 				INFOPLIST_FILE = "Rx-MVVM-Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
@@ -526,7 +541,6 @@
 				INFOPLIST_FILE = "Rx-MVVM-Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.6;

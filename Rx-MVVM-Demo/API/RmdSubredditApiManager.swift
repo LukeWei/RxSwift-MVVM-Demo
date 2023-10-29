@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class RmdSubredditApiManager {
+final class RmdSubredditApiManager {
     private let apimanager: RmdApiManagerProtocol
     
     init(apimanager: RmdApiManagerProtocol = RmdApiManager()) {
