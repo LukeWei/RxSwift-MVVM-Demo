@@ -11,14 +11,12 @@ import RxCocoa
 
 protocol RmdSubredditViewModeling {
     var subredditChildren: Observable<[SubredditChildren]> { get }
-    var updateSubreddit: PublishSubject<Bool> { get }
     func fetchSubreddit()
 }
 
 final class RmdSubredditViewModel: RmdSubredditViewModeling {
     
     // output
-    let updateSubreddit: PublishSubject = PublishSubject<Bool>()
     var subredditChildren: Observable<[SubredditChildren]>
     
     private var subredditChildrenSubject = PublishSubject<[SubredditChildren]>()
@@ -34,7 +32,6 @@ final class RmdSubredditViewModel: RmdSubredditViewModeling {
             .map({ $0.data.children })
             .subscribe { [weak self] subredditChildren in
                 self?.subredditChildrenSubject.onNext(subredditChildren)
-                self?.updateSubreddit.onNext(true)
             }.disposed(by: disposedBag)            
     }
 }

@@ -20,21 +20,38 @@ class RmdSubredditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()        
         
-        tableView.regiter(RmdSubredditCell.self)
+        title = "Subreddits"
         
-        viewModel.updateSubreddit
-            .asDriver(onErrorJustReturn: false)
-            .drive(onNext: { [weak self] shouldUpdate in
-                guard shouldUpdate else { return }
+        configTableView()
+        
+        viewModel.subredditChildren
+            .asDriver(onErrorJustReturn: [])
+            .drive { [weak self] _ in
                 self?.tableView.reloadData()
-            }).disposed(by: disposeBag)
+            }
 
         viewModel.subredditChildren
             .bind(to: tableView.rx.items(cellIdentifier: RmdSubredditCell.reuseIdentifier, cellType: RmdSubredditCell.self)) { (row, subredditChildren, cell) in
-                cell.textLabel?.text = subredditChildren.displayName
+                cell.displayNameLabel.rx.text
+                    .asObserver()
+                    .onNext(subredditChildren.displayName)
+                
             }.disposed(by: disposeBag)
         
         viewModel.fetchSubreddit()
     }
 
+    private func configTableView() {
+        tableView.regiter(RmdSubredditCell.self)
+        
+        tableView.rx.itemSelected
+            .subscribe { [weak self] indexPath in
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                
+                // TODO: Present ArticleView
+                let targetVC: RmdArticleViewController = RmdArticleViewController.loadFromNib()
+                self?.navigationController?.pushViewController(targetVC, animated: true)
+                
+            }.disposed(by: disposeBag)
+    }
 }

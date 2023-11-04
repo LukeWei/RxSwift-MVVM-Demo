@@ -23,15 +23,19 @@ protocol RmdApiManagerProtocol {
 
 final class RmdApiManager: RmdApiManagerProtocol {
     
-    func dispatch(path: String, parameters: [String : Any]? = nil) -> Observable<[String: Any]> {
+    func dispatch(path: String, parameters: [String: Any]? = nil) -> Observable<[String: Any]> {
         
         let url = URL(string: ApiConstant.baseUrlString)!.appendingPathComponent(path)
         
-        return Observable<[String: Any]>.create { observer in
+        return jsonResponse(url, parameters: parameters)
+    }
+    
+    private func jsonResponse(_ url: URL, parameters: [String: Any]? = nil) -> Observable<[String: Any]> {
+        Observable<[String: Any]>.create { observer in
             AF.request(url, method: .get, parameters: parameters)
                 .validate()
                 .responseData { response in
-                    print("response: \(response)")
+//                    print("response: \(response)")
                     
                     switch response.result {
                     case let .success(value):

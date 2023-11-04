@@ -1,20 +1,22 @@
 //
-//  RmdSubredditCell.swift
+//  RmdArticleCell.swift
 //  Rx-MVVM-Demo
 //
-//  Created by Luke Lin on 2023/10/29.
+//  Created by Luke Lin on 2023/11/3.
 //
 
 import UIKit
 
-class RmdSubredditCell: UITableViewCell {
+final class RmdArticleCell: UITableViewCell {
     
-    @IBOutlet weak var displayNameLabel: UILabel!
-
+    @IBOutlet weak var articleTitleLabel: UILabel!
+    @IBOutlet weak var articleImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
