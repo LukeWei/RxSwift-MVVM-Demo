@@ -10,28 +10,26 @@ import RxSwift
 import RxCocoa
 
 protocol RmdSubredditViewModeling {
-    var subredditChildren: Observable<[SubredditChildren]> { get }
+    var subredditChildrens: BehaviorRelay<[SubredditChildren]> { get }
     func fetchSubreddit()
 }
 
 final class RmdSubredditViewModel: RmdSubredditViewModeling {
     
     // output
-    var subredditChildren: Observable<[SubredditChildren]>
+    var subredditChildrens: BehaviorRelay<[SubredditChildren]> = .init(value: [SubredditChildren]())
     
     private var subredditChildrenSubject = PublishSubject<[SubredditChildren]>()
     private var disposedBag = DisposeBag()
     
-    init() {
-        subredditChildren = subredditChildrenSubject.asObservable()
-    }
+    init() {}
     
     func fetchSubreddit() {
         RmdSubredditApiManager().fetch()
             .asObservable()
             .map({ $0.data.children })
-            .subscribe { [weak self] subredditChildren in
-                self?.subredditChildrenSubject.onNext(subredditChildren)
+            .subscribe { [weak self] subredditChildrens in
+                self?.subredditChildrens.accept(subredditChildrens)
             }.disposed(by: disposedBag)            
     }
 }

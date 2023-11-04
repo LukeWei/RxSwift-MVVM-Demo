@@ -24,14 +24,15 @@ class RmdSubredditViewController: UIViewController {
         
         configTableView()
         
-        viewModel.subredditChildren
+        viewModel.subredditChildrens
             .asDriver(onErrorJustReturn: [])
             .drive { [weak self] _ in
                 self?.tableView.reloadData()
             }
 
-        viewModel.subredditChildren
+        viewModel.subredditChildrens
             .bind(to: tableView.rx.items(cellIdentifier: RmdSubredditCell.reuseIdentifier, cellType: RmdSubredditCell.self)) { (row, subredditChildren, cell) in
+                
                 cell.displayNameLabel.rx.text
                     .asObserver()
                     .onNext(subredditChildren.displayName)
@@ -47,11 +48,14 @@ class RmdSubredditViewController: UIViewController {
         tableView.rx.itemSelected
             .subscribe { [weak self] indexPath in
                 self?.tableView.deselectRow(at: indexPath, animated: true)
-                
-                // TODO: Present ArticleView
-                let targetVC: RmdArticleViewController = RmdArticleViewController.loadFromNib()
-                self?.navigationController?.pushViewController(targetVC, animated: true)
-                
+                self?.pushToArticleViewController(with: indexPath)
             }.disposed(by: disposeBag)
+    }
+    
+    private func pushToArticleViewController(with indexPath: IndexPath) {
+        // TODO: Present ArticleView
+        
+        let targetVC: RmdArticleViewController = RmdArticleViewController.loadFromNib()
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
 }
