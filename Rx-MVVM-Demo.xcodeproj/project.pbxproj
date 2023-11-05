@@ -35,7 +35,7 @@
 		A34D499A2AF62C7E004B5C4A /* RmdArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */; };
 		A34D499C2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */; };
 		A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */; };
-		A34D49A02AF7EB71004B5C4A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */; };
+		A34D49A32AF7F2B8004B5C4A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49A22AF7F2B8004B5C4A /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 		A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleViewModel.swift; sourceTree = "<group>"; };
 		A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleAPIManager.swift; sourceTree = "<group>"; };
 		A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
-		A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +95,7 @@
 				A34D496C2AECDA93004B5C4A /* RxSwift in Frameworks */,
 				A34D496A2AECDA93004B5C4A /* RxCocoa in Frameworks */,
 				A34D49672AECD9E3004B5C4A /* Alamofire in Frameworks */,
+				A34D49A32AF7F2B8004B5C4A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +186,6 @@
 				A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */,
 				A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */,
 				A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */,
-				A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -244,6 +243,7 @@
 				A34D49692AECDA93004B5C4A /* RxCocoa */,
 				A34D496B2AECDA93004B5C4A /* RxSwift */,
 				A34D49722AECE243004B5C4A /* ObjectMapper */,
+				A34D49A22AF7F2B8004B5C4A /* Kingfisher */,
 			);
 			productName = "Rx-MVVM-Demo";
 			productReference = A34D492F2AECD4CA004B5C4A /* Rx-MVVM-Demo.app */;
@@ -321,6 +321,7 @@
 				A34D49652AECD9E3004B5C4A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A34D49682AECDA93004B5C4A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A34D49712AECE243004B5C4A /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				A34D49A12AF7F2B8004B5C4A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A34D49302AECD4CA004B5C4A /* Products */;
 			projectDirPath = "";
@@ -378,7 +379,6 @@
 				A34D498A2AEEAA79004B5C4A /* RmdSubredditCell.swift in Sources */,
 				A34D49832AEE878C004B5C4A /* RmdSubredditViewModel.swift in Sources */,
 				A34D499A2AF62C7E004B5C4A /* RmdArticleViewModel.swift in Sources */,
-				A34D49A02AF7EB71004B5C4A /* UIImageView+Extension.swift in Sources */,
 				A34D49642AECD780004B5C4A /* RmdApiManager.swift in Sources */,
 				A34D497C2AECFFB8004B5C4A /* RmdSubredditViewController.swift in Sources */,
 				A34D49352AECD4CA004B5C4A /* SceneDelegate.swift in Sources */,
@@ -743,6 +743,14 @@
 				version = 4.2.0;
 			};
 		};
+		A34D49A12AF7F2B8004B5C4A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = exactVersion;
+				version = 7.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -765,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A34D49712AECE243004B5C4A /* XCRemoteSwiftPackageReference "ObjectMapper" */;
 			productName = ObjectMapper;
+		};
+		A34D49A22AF7F2B8004B5C4A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A34D49A12AF7F2B8004B5C4A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 final class RmdArticleViewController: UIViewController {
     
@@ -25,16 +26,18 @@ final class RmdArticleViewController: UIViewController {
     
     func config(targetDisplayName: String) {
         viewModel.targetSubredditDisplayName.accept(targetDisplayName)
+ 
     }
     
     private func configTableView() {
         tableView.regiter(RmdArticleCell.self)
+        tableView.allowsSelection = false
         
         viewModel.subreddit
             .map({ $0.data.children })
             .bind(to: tableView.rx.items(cellIdentifier: RmdArticleCell.reuseIdentifier, cellType: RmdArticleCell.self)) {row, subredditChildren, cell in
-                // TODO: Duplicated loading issue
-                cell.articleImageView.loadFrom(subredditChildren.thumbnail)
+                cell.articleTitleLabel.text = subredditChildren.title
+                cell.articleImageView.kf.setImage(with: URL(string: subredditChildren.thumbnail))
             }.disposed(by: disposeBag)
     }
 

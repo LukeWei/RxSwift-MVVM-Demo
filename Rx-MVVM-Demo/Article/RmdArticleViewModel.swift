@@ -19,7 +19,6 @@ final class RmdArticleViewModel: RmdArticleViewModeling {
     var subreddit: BehaviorRelay<Subreddit> = .init(value: Subreddit())
     var targetSubredditDisplayName: PublishRelay<String> = .init()
     
-    private let apiManager: RmdArticleAPIManager = RmdArticleAPIManager()
     private var disposeBag = DisposeBag()
     
     init() {
