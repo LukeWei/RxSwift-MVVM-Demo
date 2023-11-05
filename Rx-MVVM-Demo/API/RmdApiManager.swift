@@ -35,7 +35,6 @@ final class RmdApiManager: RmdApiManagerProtocol {
             AF.request(url, method: .get, parameters: parameters)
                 .validate()
                 .responseData { response in
-//                    print("response: \(response)")
                     
                     switch response.result {
                     case let .success(value):

@@ -33,6 +33,9 @@
 		A34D49962AF4E176004B5C4A /* RmdArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34D49942AF4E176004B5C4A /* RmdArticleCell.xib */; };
 		A34D49982AF58312004B5C4A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */; };
 		A34D499A2AF62C7E004B5C4A /* RmdArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */; };
+		A34D499C2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */; };
+		A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */; };
+		A34D49A02AF7EB71004B5C4A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		A34D49942AF4E176004B5C4A /* RmdArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RmdArticleCell.xib; sourceTree = "<group>"; };
 		A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleViewModel.swift; sourceTree = "<group>"; };
+		A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleAPIManager.swift; sourceTree = "<group>"; };
+		A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 			children = (
 				A34D49632AECD780004B5C4A /* RmdApiManager.swift */,
 				A34D49742AECE5D0004B5C4A /* RmdSubredditApiManager.swift */,
+				A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -178,6 +185,8 @@
 			children = (
 				A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */,
 				A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */,
+				A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */,
+				A34D499F2AF7EB71004B5C4A /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -363,15 +372,18 @@
 				A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */,
 				A34D49912AF4E023004B5C4A /* RmdArticleViewController.swift in Sources */,
 				A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */,
+				A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */,
 				A34D498D2AEEAAEE004B5C4A /* UITableView+Extension.swift in Sources */,
 				A34D49952AF4E176004B5C4A /* RmdArticleCell.swift in Sources */,
 				A34D498A2AEEAA79004B5C4A /* RmdSubredditCell.swift in Sources */,
 				A34D49832AEE878C004B5C4A /* RmdSubredditViewModel.swift in Sources */,
 				A34D499A2AF62C7E004B5C4A /* RmdArticleViewModel.swift in Sources */,
+				A34D49A02AF7EB71004B5C4A /* UIImageView+Extension.swift in Sources */,
 				A34D49642AECD780004B5C4A /* RmdApiManager.swift in Sources */,
 				A34D497C2AECFFB8004B5C4A /* RmdSubredditViewController.swift in Sources */,
 				A34D49352AECD4CA004B5C4A /* SceneDelegate.swift in Sources */,
 				A34D49752AECE5D0004B5C4A /* RmdSubredditApiManager.swift in Sources */,
+				A34D499C2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
