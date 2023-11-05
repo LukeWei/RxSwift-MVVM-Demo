@@ -55,7 +55,7 @@ class RmdSubredditViewController: UIViewController {
     private func pushToArticleViewController(with indexPath: IndexPath) {
         guard let targetDisplayName = viewModel.subredditChildrens.value[safe: indexPath.row]?.displayName else { return }
         
-        let targetVC: RmdArticleViewController = RmdArticleViewController.loadFromNib()
+        let targetVC: RmdArticleViewController = RmdArticleViewController()
         targetVC.config(targetDisplayName: targetDisplayName)
         self.navigationController?.pushViewController(targetVC, animated: true)
     }

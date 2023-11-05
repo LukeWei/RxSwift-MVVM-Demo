@@ -31,7 +31,6 @@
 		A34D49922AF4E023004B5C4A /* RmdArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34D49902AF4E023004B5C4A /* RmdArticleViewController.xib */; };
 		A34D49952AF4E176004B5C4A /* RmdArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49932AF4E176004B5C4A /* RmdArticleCell.swift */; };
 		A34D49962AF4E176004B5C4A /* RmdArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A34D49942AF4E176004B5C4A /* RmdArticleCell.xib */; };
-		A34D49982AF58312004B5C4A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */; };
 		A34D499A2AF62C7E004B5C4A /* RmdArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */; };
 		A34D499C2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */; };
 		A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */; };
@@ -80,7 +79,6 @@
 		A34D49902AF4E023004B5C4A /* RmdArticleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RmdArticleViewController.xib; sourceTree = "<group>"; };
 		A34D49932AF4E176004B5C4A /* RmdArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleCell.swift; sourceTree = "<group>"; };
 		A34D49942AF4E176004B5C4A /* RmdArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RmdArticleCell.xib; sourceTree = "<group>"; };
-		A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleViewModel.swift; sourceTree = "<group>"; };
 		A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleAPIManager.swift; sourceTree = "<group>"; };
 		A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */,
-				A34D49972AF58312004B5C4A /* UIViewController+Extension.swift */,
 				A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */,
 			);
 			path = Extension;
@@ -369,7 +366,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A34D49982AF58312004B5C4A /* UIViewController+Extension.swift in Sources */,
 				A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */,
 				A34D49912AF4E023004B5C4A /* RmdArticleViewController.swift in Sources */,
 				A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */,
