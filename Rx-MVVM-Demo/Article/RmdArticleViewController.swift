@@ -25,8 +25,8 @@ final class RmdArticleViewController: UIViewController {
     }
     
     func config(targetDisplayName: String) {
+        title = targetDisplayName
         viewModel.targetSubredditDisplayName.accept(targetDisplayName)
- 
     }
     
     private func configTableView() {

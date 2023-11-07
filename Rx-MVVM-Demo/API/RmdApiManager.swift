@@ -41,13 +41,10 @@ final class RmdApiManager: RmdApiManagerProtocol {
                         do {
                             
                             guard let json = try JSONSerialization.jsonObject(with: value) as? [String: Any] else {
-                                
-                                print("error: unable convert to json")
                                 observer.onError(RmdApiError.JsonConvert)
                                 throw RmdApiError.JsonConvert
                             }
                             
-                            print("success response: \(json)")
                             observer.on(.next(json))
                             observer.on(.completed)
                         } catch let parseError {
