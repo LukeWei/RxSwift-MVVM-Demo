@@ -22,7 +22,7 @@ struct Subreddit: Mappable {
 
 struct SubredditData: Mappable {
     var after: String = ""
-    var children: [SubredditChildren] = []
+    var childrens: [SubredditChildren] = []
     
     init?(map: Map) {}
     
@@ -30,7 +30,7 @@ struct SubredditData: Mappable {
     
     mutating func mapping(map: Map) {
         after <- map["after"]
-        children <- map["children"]
+        childrens <- map["children"]
     }
 }
 
@@ -43,6 +43,8 @@ struct SubredditChildren: Mappable {
     var id: String = ""
     
     init?(map: Map) {}
+    
+    init() {}
     
     mutating func mapping(map: Map) {
         displayName <- map["data.display_name"]

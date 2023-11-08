@@ -11,13 +11,15 @@ import RxCocoa
 
 protocol RmdArticleViewModeling {
     var subreddit: BehaviorRelay<Subreddit> { get }
-    var targetSubredditDisplayName: PublishRelay<String> { get set }
+    var targetSubredditDisplayName: BehaviorRelay<String> { get set }
+    
+    func fetchMore(after: String) -> Observable<Subreddit>
 }
 
 final class RmdArticleViewModel: RmdArticleViewModeling {
     
     var subreddit: BehaviorRelay<Subreddit> = .init(value: Subreddit())
-    var targetSubredditDisplayName: PublishRelay<String> = .init()
+    var targetSubredditDisplayName: BehaviorRelay<String> = .init(value: "")
     
     private var disposeBag = DisposeBag()
     
@@ -28,5 +30,9 @@ final class RmdArticleViewModel: RmdArticleViewModeling {
             }.subscribe { [weak self] subreddit in
                 self?.subreddit.accept(subreddit)
             }.disposed(by: disposeBag)
+    }
+    
+    func fetchMore(after: String) -> Observable<Subreddit> {
+        RmdArticleAPIManager().fetch(subredditDisplayName: targetSubredditDisplayName.value, after: after)
     }
 }

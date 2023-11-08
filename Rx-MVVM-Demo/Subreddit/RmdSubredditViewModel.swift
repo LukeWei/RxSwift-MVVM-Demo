@@ -27,7 +27,7 @@ final class RmdSubredditViewModel: RmdSubredditViewModeling {
     func fetchSubreddit() {
         RmdSubredditApiManager().fetch()
             .asObservable()
-            .map({ $0.data.children })
+            .map({ $0.data.childrens })
             .subscribe { [weak self] subredditChildrens in
                 self?.subredditChildrens.accept(subredditChildrens)
             }.disposed(by: disposedBag)            

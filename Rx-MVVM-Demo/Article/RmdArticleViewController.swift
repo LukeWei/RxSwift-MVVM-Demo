@@ -34,7 +34,7 @@ final class RmdArticleViewController: UIViewController {
         tableView.allowsSelection = false
         
         viewModel.subreddit
-            .map({ $0.data.children })
+            .map({ $0.data.childrens })
             .bind(to: tableView.rx.items(cellIdentifier: RmdArticleCell.reuseIdentifier, cellType: RmdArticleCell.self)) {row, subredditChildren, cell in
                 cell.articleTitleLabel.text = subredditChildren.title
                 cell.articleImageView.kf.setImage(with: URL(string: subredditChildren.thumbnail))
