@@ -35,6 +35,8 @@
 		A34D499C2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */; };
 		A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */; };
 		A34D49A32AF7F2B8004B5C4A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A34D49A22AF7F2B8004B5C4A /* Kingfisher */; };
+		A34D49A62AFE05C1004B5C4A /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49A52AFE05C1004B5C4A /* UIScrollView+Extension.swift */; };
+		A34D49A82AFE0925004B5C4A /* Lenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D49A72AFE0925004B5C4A /* Lenses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleViewModel.swift; sourceTree = "<group>"; };
 		A34D499B2AF6D0AD004B5C4A /* RmdArticleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmdArticleAPIManager.swift; sourceTree = "<group>"; };
 		A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		A34D49A52AFE05C1004B5C4A /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		A34D49A72AFE0925004B5C4A /* Lenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lenses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				A34D496D2AECDC3C004B5C4A /* Extension */,
 				A34D49782AECFF6C004B5C4A /* Subreddit */,
 				A34D498E2AF4DFF3004B5C4A /* Article */,
+				A34D49A72AFE0925004B5C4A /* Lenses.swift */,
 				A34D49322AECD4CA004B5C4A /* AppDelegate.swift */,
 				A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */,
 				A34D493D2AECD4CB004B5C4A /* LaunchScreen.storyboard */,
@@ -183,6 +188,7 @@
 			children = (
 				A34D498C2AEEAAEE004B5C4A /* UITableView+Extension.swift */,
 				A34D499D2AF7E7D8004B5C4A /* Collection+Extension.swift */,
+				A34D49A52AFE05C1004B5C4A /* UIScrollView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -367,9 +373,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A34D49702AECE1C3004B5C4A /* Subreddit.swift in Sources */,
+				A34D49A82AFE0925004B5C4A /* Lenses.swift in Sources */,
 				A34D49912AF4E023004B5C4A /* RmdArticleViewController.swift in Sources */,
 				A34D49332AECD4CA004B5C4A /* AppDelegate.swift in Sources */,
 				A34D499E2AF7E7D8004B5C4A /* Collection+Extension.swift in Sources */,
+				A34D49A62AFE05C1004B5C4A /* UIScrollView+Extension.swift in Sources */,
 				A34D498D2AEEAAEE004B5C4A /* UITableView+Extension.swift in Sources */,
 				A34D49952AF4E176004B5C4A /* RmdArticleCell.swift in Sources */,
 				A34D498A2AEEAA79004B5C4A /* RmdSubredditCell.swift in Sources */,

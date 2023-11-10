@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-struct Subreddit: Mappable {
+struct Subreddit: Mappable, Mutable {
     var data: SubredditData = SubredditData()
     
     init?(map: Map) {}

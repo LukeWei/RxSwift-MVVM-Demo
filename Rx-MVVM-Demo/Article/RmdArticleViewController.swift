@@ -30,6 +30,9 @@ final class RmdArticleViewController: UIViewController {
     }
     
     private func configTableView() {
+        let viewModel: RmdArticleViewModeling = viewModel
+        let tableView: UITableView = tableView
+                
         tableView.regiter(RmdArticleCell.self)
         tableView.allowsSelection = false
         
@@ -39,6 +42,14 @@ final class RmdArticleViewController: UIViewController {
                 cell.articleTitleLabel.text = subredditChildren.title
                 cell.articleImageView.kf.setImage(with: URL(string: subredditChildren.thumbnail))
             }.disposed(by: disposeBag)
+        
+        tableView.rx.contentOffset
+            .asDriver()
+            .drive { _ in
+                // TODO: Duplicate load issue
+                guard tableView.isNearBottomEdge() else { return }
+                viewModel.fetchMore(after: viewModel.subreddit.value.data.after)
+            }.disposed(by: disposeBag)
+        
     }
-
 }
