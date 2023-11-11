@@ -56,6 +56,7 @@ class RmdSubredditViewController: UIViewController {
         guard let targetDisplayName = viewModel.subredditChildrens.value[safe: indexPath.row]?.displayName else { return }
         
         let targetVC: RmdArticleViewController = RmdArticleViewController()
+        targetVC.title = targetDisplayName
         targetVC.config(targetDisplayName: targetDisplayName)
         self.navigationController?.pushViewController(targetVC, animated: true)
     }

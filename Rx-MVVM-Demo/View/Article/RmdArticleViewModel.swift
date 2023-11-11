@@ -25,6 +25,7 @@ final class RmdArticleViewModel: RmdArticleViewModeling {
     
     init() {
         targetSubredditDisplayName.asObservable()
+            .filter({ $0 != "" })
             .flatMap { displayName in
                 RmdArticleAPIManager().fetch(subredditDisplayName: displayName)
             }.subscribe { [weak self] subreddit in
@@ -38,6 +39,7 @@ final class RmdArticleViewModel: RmdArticleViewModeling {
             .subscribe { [weak self] subreddit in
                 guard let strongSelf = self, let subreddit = subreddit.element else { return }
                 let mutated = strongSelf.subreddit.value.mutate {
+                    $0.data.after = subreddit.data.after
                     $0.data.childrens += subreddit.data.childrens
                 }
                 self?.subreddit.accept(mutated)

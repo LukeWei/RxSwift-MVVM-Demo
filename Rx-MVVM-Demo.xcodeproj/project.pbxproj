@@ -144,8 +144,7 @@
 				A34D49622AECD728004B5C4A /* API */,
 				A34D496E2AECE196004B5C4A /* DataModel */,
 				A34D496D2AECDC3C004B5C4A /* Extension */,
-				A34D49782AECFF6C004B5C4A /* Subreddit */,
-				A34D498E2AF4DFF3004B5C4A /* Article */,
+				A34D49AA2B00117C004B5C4A /* View */,
 				A34D49A72AFE0925004B5C4A /* Lenses.swift */,
 				A34D49322AECD4CA004B5C4A /* AppDelegate.swift */,
 				A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */,
@@ -223,6 +222,15 @@
 				A34D49992AF62C7E004B5C4A /* RmdArticleViewModel.swift */,
 			);
 			path = Article;
+			sourceTree = "<group>";
+		};
+		A34D49AA2B00117C004B5C4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A34D49782AECFF6C004B5C4A /* Subreddit */,
+				A34D498E2AF4DFF3004B5C4A /* Article */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

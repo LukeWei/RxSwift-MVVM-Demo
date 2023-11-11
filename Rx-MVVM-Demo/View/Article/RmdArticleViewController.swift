@@ -16,6 +16,7 @@ final class RmdArticleViewController: UIViewController {
     
     let viewModel: RmdArticleViewModeling = RmdArticleViewModel()
     
+    private var shouldFetchMoreData = true
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -25,13 +26,10 @@ final class RmdArticleViewController: UIViewController {
     }
     
     func config(targetDisplayName: String) {
-        title = targetDisplayName
         viewModel.targetSubredditDisplayName.accept(targetDisplayName)
     }
     
     private func configTableView() {
-        let viewModel: RmdArticleViewModeling = viewModel
-        let tableView: UITableView = tableView
                 
         tableView.regiter(RmdArticleCell.self)
         tableView.allowsSelection = false
@@ -43,12 +41,25 @@ final class RmdArticleViewController: UIViewController {
                 cell.articleImageView.kf.setImage(with: URL(string: subredditChildren.thumbnail))
             }.disposed(by: disposeBag)
         
+        viewModel.subreddit
+            .asDriver()
+            .filter({ !$0.data.after.isEmpty })
+            .drive(onNext: { [weak self] subreddit in
+                guard let strongSelf = self else { return }
+                if !strongSelf.shouldFetchMoreData {
+                    strongSelf.shouldFetchMoreData = true
+                }
+            }).disposed(by: disposeBag)
+        
         tableView.rx.contentOffset
             .asDriver()
-            .drive { _ in
-                // TODO: Duplicate load issue
-                guard tableView.isNearBottomEdge() else { return }
-                viewModel.fetchMore(after: viewModel.subreddit.value.data.after)
+            .map({ $0.y })
+            .filter({ $0 > 0 })
+            .drive { [weak self] _ in
+                guard let strongSelf = self, strongSelf.tableView.isNearBottomEdge() && strongSelf.shouldFetchMoreData else { return }
+                
+                strongSelf.shouldFetchMoreData = false
+                strongSelf.viewModel.fetchMore(after: strongSelf.viewModel.subreddit.value.data.after)
             }.disposed(by: disposeBag)
         
     }

@@ -25,12 +25,12 @@ final class RmdApiManager: RmdApiManagerProtocol {
     
     func dispatch(path: String, parameters: [String: Any]? = nil) -> Observable<[String: Any]> {
         
-        let url = URL(string: ApiConstant.baseUrlString)!.appendingPathComponent(path)
-        
-        return jsonResponse(url, parameters: parameters)
+        var urlComponet = URLComponents(string: ApiConstant.baseUrlString)!
+        urlComponet.path = path
+        return jsonResponse(urlComponet, parameters: parameters)
     }
     
-    private func jsonResponse(_ url: URL, parameters: [String: Any]? = nil) -> Observable<[String: Any]> {
+    private func jsonResponse(_ url: URLComponents, parameters: [String: Any]? = nil) -> Observable<[String: Any]> {
         Observable<[String: Any]>.create { observer in
             AF.request(url, method: .get, parameters: parameters)
                 .validate()
