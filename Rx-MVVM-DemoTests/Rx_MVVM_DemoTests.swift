@@ -37,6 +37,22 @@ final class Rx_MVVM_DemoTests: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
 
+    func testMutableUtility() {
+        struct TestData: Mutable {
+            var value: Int
+        }
+        
+        let value: Int = 1
+        let newValue: Int = 2
+        
+        var data = TestData(value: value)
+        data = data.mutate {
+            $0.value = newValue
+        }
+        
+        XCTAssert(data.value == newValue)
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

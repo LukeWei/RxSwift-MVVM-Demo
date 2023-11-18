@@ -142,6 +142,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A34496E92B0888A500D8526A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A34D49A72AFE0925004B5C4A /* Lenses.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		A34D49262AECD4CA004B5C4A = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +178,7 @@
 				A34D496E2AECE196004B5C4A /* DataModel */,
 				A34D496D2AECDC3C004B5C4A /* Extension */,
 				A34D49AA2B00117C004B5C4A /* View */,
-				A34D49A72AFE0925004B5C4A /* Lenses.swift */,
+				A34496E92B0888A500D8526A /* Utility */,
 				A34D49322AECD4CA004B5C4A /* AppDelegate.swift */,
 				A34D49342AECD4CA004B5C4A /* SceneDelegate.swift */,
 				A34D493D2AECD4CB004B5C4A /* LaunchScreen.storyboard */,
