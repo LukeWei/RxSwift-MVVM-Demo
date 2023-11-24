@@ -43,7 +43,7 @@ class RmdSubredditViewController: UIViewController {
     }
 
     private func configTableView() {
-        tableView.regiter(RmdSubredditCell.self)
+        tableView.register(RmdSubredditCell.self)
         
         tableView.rx.itemSelected
             .subscribe { [weak self] indexPath in

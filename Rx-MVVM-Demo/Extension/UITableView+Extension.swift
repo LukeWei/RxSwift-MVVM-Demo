@@ -15,7 +15,7 @@ extension UITableViewCell {
 }
 
 extension UITableView {
-    func regiter<T: UITableViewCell>(_ cell: T.Type) {
+    func register<T: UITableViewCell>(_ cell: T.Type) {
         register(UINib(nibName: String(describing: T.self), bundle: nil), forCellReuseIdentifier: T.reuseIdentifier)
     }
 }

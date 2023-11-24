@@ -31,7 +31,7 @@ final class RmdArticleViewController: UIViewController {
     
     private func configTableView() {
                 
-        tableView.regiter(RmdArticleCell.self)
+        tableView.register(RmdArticleCell.self)
         tableView.allowsSelection = false
         
         viewModel.subreddit
